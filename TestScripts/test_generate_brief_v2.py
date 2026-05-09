@@ -11,7 +11,7 @@ conn = pyodbc.connect(
 
 cursor = conn.cursor()
 
-investor_email = "examplemichaelscofield@example.com"
+investor_email = "kajetansekunda.ks.ks@gmail.com"
 brief_date = str(date.today())
 
 query = """

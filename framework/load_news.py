@@ -70,6 +70,7 @@ for company in companies:
 
             relevance_score = relevance["score"]
             relevance_method = relevance["method"]
+            tfidf_similarity = relevance["tfidf_similarity"]
 
             if not title or not url:
                 continue
@@ -86,9 +87,10 @@ for company in companies:
                         Url,
                         Content,
                         RelevanceScore,
-                        RelevanceMethod
+                        RelevanceMethod,
+                        TfidFSimilarity
                     )
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 company_id,
                 pub_date,
@@ -97,7 +99,8 @@ for company in companies:
                 url,
                 summary,
                 relevance_score,
-                relevance_method
+                relevance_method,
+                tfidf_similarity
                 )
 
                 conn.commit()
