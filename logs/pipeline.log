@@ -1,0 +1,44 @@
+2026-05-09 21:11:57,390 | INFO | daily_pipeline | Running framework/load_news.py...
+2026-05-09 21:12:00,256 | INFO | daily_pipeline | 
+Loading news for AAPL...
+Skipped irrelevant news: The Nasdaq's top winners are now running hotter than in 2000: Chart of the Day
+Skipped irrelevant news: Intel stock hits fourth straight record high as Apple report fuels chip rally
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://247wallst.com/investing/2026/05/09/apple-dominated-the-2026-chip-war-googles-partners-are-left-to-buy-scraps/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/apple-intel-chip-deal-reshapes-171116074.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: 1 Reason You'll Regret Not Buying Apple Stock Now
+
+Loading news for MSFT...
+Skipped irrelevant news: Jim Cramer on Salesforce: “It’s Tough Because the Market Hates Software”
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/sectors/technology/articles/microsoft-ai-safety-role-grows-161843970.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: Why a Major Investor Dumped $32 Million of This 7.2% Yielding Closed-End Fund
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/sectors/technology/articles/microsoft-corp-msft-invest-european-145058016.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: Micron Stock Is Up 700% Over the Past Year. Its Shares Still Look Relatively Cheap.
+
+Loading news for NVDA...
+Skipped irrelevant news: The Nasdaq's top winners are now running hotter than in 2000: Chart of the Day
+Skipped irrelevant news: Intel stock hits fourth straight record high as Apple report fuels chip rally
+Skipped irrelevant news: Goldman Sachs Retirement Survey 2025: People with High Financial Grit Retire with 49% More Savings
+Skipped irrelevant news: Analysts turn heads with AMD stock forecast after massive rally
+Skipped irrelevant news: Jim Cramer on Corning: “The Company’s More Relevant Than Ever”
+
+Done.
+
+2026-05-09 21:12:00,256 | INFO | daily_pipeline | Running framework/analyze_sentiment.py...
+2026-05-09 21:12:08,433 | INFO | daily_pipeline | 
+Done.
+
+2026-05-09 21:12:08,433 | ERROR | daily_pipeline | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 201/201 [00:00<?, ?it/s]
+
+2026-05-09 21:12:08,433 | INFO | daily_pipeline | Running framework/generate_brief_v3.py...
+2026-05-09 21:12:08,585 | INFO | daily_pipeline | Brief v3 generated for kajetansekunda.ks.ks@gmail.com
+Done.
+
+2026-05-09 21:12:08,585 | INFO | daily_pipeline | Running framework/send_briefs_v3.py...
+2026-05-09 21:12:09,962 | INFO | daily_pipeline | Trying to send BriefID 8 to kajetansekunda.ks.ks@gmail.com
+Email sent successfully to kajetansekunda.ks.ks@gmail.com
+Done.
+
+2026-05-09 21:12:09,963 | INFO | daily_pipeline | Daily pipeline completed successfully.

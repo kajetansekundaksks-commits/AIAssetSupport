@@ -1,5 +1,9 @@
 import subprocess
 import sys
+from logger_config import setup_logger
+
+
+logger = setup_logger("daily_pipeline")
 
 scripts = [
     "framework/load_news.py",
@@ -9,7 +13,7 @@ scripts = [
 ]
 
 for script in scripts:
-    print(f"Running {script}...")
+    logger.info(f"Running {script}...")
 
     result = subprocess.run(
         [sys.executable, script],
@@ -17,13 +21,13 @@ for script in scripts:
         text=True
     )
 
-    print(result.stdout)
+    logger.info(result.stdout)
 
     if result.stderr:
-        print(result.stderr)
+        logger.error(result.stderr)
 
     if result.returncode != 0:
-        print(f"Pipeline stopped at {script}")
+        logger.error(f"Pipeline stopped at {script}")
         sys.exit(result.returncode)
 
-print("Daily pipeline completed successfully.")
+logger.info("Daily pipeline completed successfully.")
