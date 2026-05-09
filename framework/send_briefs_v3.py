@@ -4,6 +4,7 @@ import smtplib
 
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
+from email_template import build_html_email
 
 load_dotenv()
 
@@ -54,7 +55,8 @@ for brief in briefs:
 
     subject = f"Daily Investor Brief - {brief.BriefDate}"
 
-    msg = MIMEText(brief.BriefText, "plain", "utf-8")
+    html_body = build_html_email(brief.BriefText)
+    msg = MIMEText(html_body, "html", "utf-8")
     msg["Subject"] = subject
     msg["From"] = sender_email
     msg["To"] = receiver_email

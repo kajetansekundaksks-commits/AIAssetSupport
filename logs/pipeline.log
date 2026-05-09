@@ -42,3 +42,171 @@ Email sent successfully to kajetansekunda.ks.ks@gmail.com
 Done.
 
 2026-05-09 21:12:09,963 | INFO | daily_pipeline | Daily pipeline completed successfully.
+2026-05-09 21:51:35,728 | INFO | daily_pipeline | Running framework/load_news.py...
+2026-05-09 21:51:40,590 | INFO | daily_pipeline | 
+Loading news for AAPL...
+Skipped irrelevant news: The Nasdaq's top winners are now running hotter than in 2000: Chart of the Day
+Skipped irrelevant news: Intel stock hits fourth straight record high as Apple report fuels chip rally
+Skipped irrelevant news: Is Intel Stock the Next Nvidia?
+Inserted: Apple dominated the 2026 chip war. Google’s partners are left to buy scraps
+Inserted: Apple Intel Chip Deal Reshapes Supply Chain And Valuation Debate
+
+Loading news for MSFT...
+Skipped irrelevant news: Goldman Sachs spots a troubling big tech trend
+Skipped irrelevant news: Jim Cramer on Salesforce: “It’s Tough Because the Market Hates Software”
+Inserted: Microsoft’s AI Safety Role Grows As Infrastructure Hiring And Security Risks Mount
+Skipped irrelevant news: Why a Major Investor Dumped $32 Million of This 7.2% Yielding Closed-End Fund
+Inserted: Microsoft Corp. (MSFT) to Invest in European Data Center Regions
+
+Loading news for NVDA...
+Skipped irrelevant news: The Nasdaq's top winners are now running hotter than in 2000: Chart of the Day
+Skipped irrelevant news: Intel stock hits fourth straight record high as Apple report fuels chip rally
+Skipped irrelevant news: Is Intel Stock the Next Nvidia?
+Skipped irrelevant news: 2 Mining Stocks to Buy in May
+Skipped irrelevant news: Ferrari Beat Estimates. So Why Is the Stock Down?
+
+Loading news for GOOGL...
+Skipped irrelevant news: Goldman Sachs spots a troubling big tech trend
+Skipped irrelevant news: The Best AI Software Stock to Buy in 2026
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://247wallst.com/investing/2026/05/09/apple-dominated-the-2026-chip-war-googles-partners-are-left-to-buy-scraps/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: This Biotech Stock Has Soared 175%. Here’s Why One Fund Still Sold $3 Million Worth
+Skipped irrelevant news: Why a Major Investor Dumped $32 Million of This 7.2% Yielding Closed-End Fund
+
+Loading news for AMD...
+Skipped irrelevant news: Intel stock hits fourth straight record high as Apple report fuels chip rally
+Inserted: Analysts turn heads with AMD stock forecast after massive rally
+Inserted: Jim Cramer Slams AMD Downgrade
+Inserted: Prediction: It's Not Too Late to Buy AMD Stock as Revenue Surges
+Skipped irrelevant news: NVIDIA: ‘The Party Is Going to End Soon’ According to CNBC
+
+Loading news for TSLA...
+Skipped irrelevant news: Cathie Wood predicts 'voracious' appetite for 'volatile' SpaceX IPO
+Skipped irrelevant news: Bullish on Robotaxis? This Is the Stock To Buy (Hint: It's Not Tesla or Alphabet)
+Inserted: Is Tesla (TSLA) the Best Quality Stock to Buy and Hold for the Next 5 Years?
+Skipped irrelevant news: 3 Monster Stocks to Hold for the Next 10 Years
+Skipped irrelevant news: Better EV Stock: Tesla vs. Rivian vs. Lucid
+
+Loading news for XOM...
+Inserted: Argus Sees Stronger Production Growth Ahead for Exxon Mobil (XOM)
+Skipped irrelevant news: US Equity Indexes Advance This Week as AI-Trade Boosts Technology While Iran Ceasefire Continues
+Skipped irrelevant news: Is BP Cleaning House to Stay Independent or Setting Itself Up to Be Bought?
+Skipped irrelevant news: Shell warns the global oil market is tightening fast
+Skipped irrelevant news: Shell Q1 Earnings Beat on Trading Strength, Revenues Miss
+
+Loading news for CVX...
+Skipped irrelevant news: Options: Finding 'dividend aristocrat' stocks amid volatility
+Skipped irrelevant news: My Top 3 Energy Stocks for May 2026
+Skipped irrelevant news: What Is One of the Best Energy Stocks to Buy and Hold for 10 Years?
+Inserted: Chevron’s California Gasoline Scrutiny Puts Refining Margins And ESG Risks In Focus
+Skipped irrelevant news: US Equity Indexes Advance This Week as AI-Trade Boosts Technology While Iran Ceasefire Continues
+
+Loading news for CAT...
+Inserted: Caterpillar (CAT) Valuation Check As AI Data Center Power Contracts Follow Strong First Quarter Results
+Inserted: Google, Broadcom Drive Delirious Demand. So Do 16 More Stocks.
+Inserted: Jim Cramer Highlights Caterpillar As One of the Backup Power Plays
+Inserted: 2 Home Run Stocks I’d Buy With $1,000 Today
+Inserted: Jim Cramer Discusses Caterpillar (CAT) & Data Centers
+
+Loading news for JPM...
+Skipped irrelevant news: How The Oportun Financial (OPRT) Investment Story Is Shifting With Price Targets And Risk Views
+Inserted: JPMorgan Lawsuit Raises Governance Questions As Valuation Shows Apparent Discount
+Inserted: JPMorgan's Jamie Dimon Warns Of 'Some Kind Of Bond Crisis' — Blames Government Debt
+Inserted: JPMorgan vs. Bank of America: How the 2 Dividend-Paying Bank Stocks Stack Up in 2026
+Inserted: Wall Street wants the best crypto talent but there's a catch
+
+Loading news for INTC...
+Skipped irrelevant news: Intel stock hits fourth straight record high as Apple report fuels chip rally
+Skipped irrelevant news: Is Intel Stock the Next Nvidia?
+Skipped irrelevant news: 2 Mining Stocks to Buy in May
+Skipped irrelevant news: Ferrari Beat Estimates. So Why Is the Stock Down?
+Skipped irrelevant news: Analysts turn heads with AMD stock forecast after massive rally
+
+Done.
+
+2026-05-09 21:51:40,590 | INFO | daily_pipeline | Running framework/analyze_sentiment.py...
+2026-05-09 21:51:52,827 | INFO | daily_pipeline | 
+Analyzing NewsID 71
+Inserted sentiment: neutral (0.7211)
+
+Analyzing NewsID 72
+Inserted sentiment: neutral (0.6611)
+
+Analyzing NewsID 73
+Inserted sentiment: positive (0.5969)
+
+Analyzing NewsID 74
+Inserted sentiment: positive (0.7354)
+
+Analyzing NewsID 76
+Inserted sentiment: positive (0.9532)
+
+Analyzing NewsID 77
+Inserted sentiment: neutral (0.7872)
+
+Analyzing NewsID 78
+Inserted sentiment: positive (0.8831)
+
+Analyzing NewsID 79
+Inserted sentiment: negative (0.9587)
+
+Analyzing NewsID 80
+Inserted sentiment: positive (0.9468)
+
+Analyzing NewsID 81
+Inserted sentiment: negative (0.5805)
+
+Analyzing NewsID 82
+Inserted sentiment: negative (0.9669)
+
+Analyzing NewsID 83
+Inserted sentiment: neutral (0.5245)
+
+Analyzing NewsID 84
+Inserted sentiment: neutral (0.9378)
+
+Analyzing NewsID 85
+Inserted sentiment: neutral (0.8542)
+
+Analyzing NewsID 86
+Inserted sentiment: neutral (0.7576)
+
+Analyzing NewsID 87
+Inserted sentiment: negative (0.9234)
+
+Analyzing NewsID 88
+Inserted sentiment: negative (0.7138)
+
+Analyzing NewsID 89
+Inserted sentiment: neutral (0.9078)
+
+Analyzing NewsID 90
+Inserted sentiment: neutral (0.9006)
+
+Done.
+
+2026-05-09 21:51:52,827 | ERROR | daily_pipeline | 
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 201/201 [00:00<00:00, 39746.13it/s]
+
+2026-05-09 21:51:52,827 | INFO | daily_pipeline | Running framework/generate_brief_v3.py...
+2026-05-09 21:51:53,037 | INFO | daily_pipeline | Brief v3 generated for ks150014@student.sgh.waw.pl
+Brief v3 generated for kajetansekunda.brok@gmail.com
+Brief v3 generated for kajetansekunda.ks.ks.fb@gmail.com
+Brief v3 generated for izabelawysocka@onet.pl
+Brief v3 generated for kajetansekunda.ks.ks@gmail.com
+Done.
+
+2026-05-09 21:51:53,037 | INFO | daily_pipeline | Running framework/send_briefs_v3.py...
+2026-05-09 21:51:59,053 | INFO | daily_pipeline | Trying to send BriefID 14 to kajetansekunda.ks.ks@gmail.com
+Email sent successfully to kajetansekunda.ks.ks@gmail.com
+Trying to send BriefID 13 to izabelawysocka@onet.pl
+Email sent successfully to izabelawysocka@onet.pl
+Trying to send BriefID 12 to kajetansekunda.ks.ks.fb@gmail.com
+Email sent successfully to kajetansekunda.ks.ks.fb@gmail.com
+Trying to send BriefID 11 to kajetansekunda.brok@gmail.com
+Email sent successfully to kajetansekunda.brok@gmail.com
+Trying to send BriefID 10 to ks150014@student.sgh.waw.pl
+Email sent successfully to ks150014@student.sgh.waw.pl
+Done.
+
+2026-05-09 21:51:59,053 | INFO | daily_pipeline | Daily pipeline completed successfully.
