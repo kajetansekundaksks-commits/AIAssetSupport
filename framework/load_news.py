@@ -20,8 +20,13 @@ cursor = conn.cursor()
 # -----------------------------------
 
 cursor.execute("""
-    SELECT CompanyID, Ticker, CompanyName
+    SELECT 
+        CompanyID,
+        Ticker,
+        CompanyName,
+        Sector
     FROM Companies
+    ORDER BY Ticker
 """)
 
 companies = cursor.fetchall()

@@ -1,0 +1,12 @@
+Ticker,CompanyName,Exchange,Country,Sector
+AAPL,Apple Inc.,NASDAQ,USA,Technology
+MSFT,Microsoft Corporation,NASDAQ,USA,Technology
+NVDA,NVIDIA Corporation,NASDAQ,USA,Semiconductors
+GOOGL,Alphabet Inc.,NASDAQ,USA,Technology
+AMD,Advanced Micro Devices Inc.,NASDAQ,USA,Semiconductors
+TSLA,Tesla Inc.,NASDAQ,USA,Consumer Cyclical
+XOM,Exxon Mobil Corporation,NYSE,USA,Energy
+CVX,Chevron Corporation,NYSE,USA,Energy
+CAT,Caterpillar Inc.,NYSE,USA,Industrials
+JPM,JPMorgan Chase & Co.,NYSE,USA,Financials
+INTC,Intel Corporation,NASDAQ,USA,Semiconductors
