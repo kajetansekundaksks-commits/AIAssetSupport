@@ -4,7 +4,7 @@ import smtplib
 
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
-from framework.email_template import build_html_email
+from email_template import build_html_email
 
 load_dotenv()
 
