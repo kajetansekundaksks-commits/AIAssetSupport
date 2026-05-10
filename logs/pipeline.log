@@ -210,3 +210,148 @@ Email sent successfully to ks150014@student.sgh.waw.pl
 Done.
 
 2026-05-09 21:51:59,053 | INFO | daily_pipeline | Daily pipeline completed successfully.
+2026-05-10 09:32:23,091 | INFO | daily_pipeline | Running framework/load_news.py...
+2026-05-10 09:33:14,444 | INFO | daily_pipeline | 
+Loading news for AAPL...
+Skipped irrelevant news: The Nasdaq's top winners are now running hotter than in 2000: Chart of the Day
+Skipped irrelevant news: The Best Tech Stocks Under $20 to Buy in 2026
+Skipped irrelevant news: Dow Jones Futures: Market At Highs With Iran, Trump-Xi Summit In Focus; Apple, Nvidia, Boeing In Buy Areas
+Skipped irrelevant news: Paul Tudor Jones Warns Trump-Era Market Boom Could End in a 35% Crash. Here’s Why He’s Still Buying Stocks
+Skipped irrelevant news: Is Intel Stock the Next Nvidia?
+
+Loading news for MSFT...
+Inserted: Why Microsoft (MSFT) Is Turning Agent 365 Into an AI Control Plane
+Inserted: Why Microsoft (MSFT) Looks Deeply Embedded in Enterprise AI and Cloud Spending
+Skipped irrelevant news: The Memory Shortage Is Coming for Big Tech's Bottom Line. This Company Will Hold Up Better Than Anyone Else.
+Skipped irrelevant news: Paul Tudor Jones Warns Trump-Era Market Boom Could End in a 35% Crash. Here’s Why He’s Still Buying Stocks
+Skipped irrelevant news: Microsoft Deal Strengthens Black Hills Corporation (BKH) Prospects as a High Growth Utility Stock to Buy
+
+Loading news for NVDA...
+Skipped irrelevant news: The Nasdaq's top winners are now running hotter than in 2000: Chart of the Day
+Skipped irrelevant news: The Best Tech Stocks Under $20 to Buy in 2026
+Skipped irrelevant news: Is CoreWeave Stock a Buy on the Dip as Revenue Continues to Skyrocket?
+Skipped irrelevant news: Chevron Has Returned Over $5 Billion to Shareholders for 16 Consecutive Quarters. Is CVX the Ultimate Oil Stock to Own Right Now?
+Inserted: Why NVIDIA (NVDA) Is Turning Its AI Hardware Lead Into an Infrastructure Moat
+
+Loading news for GOOGL...
+Skipped irrelevant news: The Memory Shortage Is Coming for Big Tech's Bottom Line. This Company Will Hold Up Better Than Anyone Else.
+Skipped irrelevant news: Is Now a Good Time to Buy Amazon Stock?
+Inserted: Alphabet’s $17b Bond Sale Reshapes AI Spending And Valuation Story
+Skipped irrelevant news: Goldman Sachs spots a troubling big tech trend
+Skipped irrelevant news: The Best AI Software Stock to Buy in 2026
+
+Loading news for AMD...
+Inserted: 5 Things Investors Should Know from AMD's Latest Earnings Call (Including the Company's $120 Billion Server CPU Opportunity)
+Inserted: AMD Rackspace AI Cloud Deal Targets Regulated Growth And Valuation Questions
+Inserted: AMD Stock Is Up 320% Over the Past Year. Should Investors Shift Their Attention Away From Nvidia?
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.thestreet.com/investing/stocks/analysts-turn-heads-with-amd-stock-forecast-after-massive-rally). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/jim-cramer-slams-amd-downgrade-183636901.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+
+Loading news for TSLA...
+Skipped irrelevant news: Wedbush sends blunt message on Elon Musk's Tesla and Intel deal
+Inserted: Tesla (TSLA) Is Up 7.9% After China EV Rebound and Terafab AI Chip Push - What's Changed
+Inserted: Is Cathie Wood Still Hopeful About Tesla (TSLA)?
+Skipped irrelevant news: Elon Musk Fires Back As Calls To Tax Billionaires Grow Louder, Says Paid More Taxes Than 'Anyone In History'
+Skipped irrelevant news: Elon Musk Says 'I Hope Civilization's Around in 100 Years' But If It Is, Expect It To Look Super Different With 10x's More Humanoid Robots Than Humans
+
+Loading news for XOM...
+Skipped irrelevant news: Soaring energy profits reignite calls for windfall tax
+Skipped irrelevant news: Fragile cease-fire holds in Middle East while U.S. awaits Iranian war response
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/sectors/energy/articles/argus-sees-stronger-production-growth-011609181.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: US Equity Indexes Advance This Week as AI-Trade Boosts Technology While Iran Ceasefire Continues
+Skipped irrelevant news: Is BP Cleaning House to Stay Independent or Setting Itself Up to Be Bought?
+
+Loading news for CVX...
+Inserted: Chevron Has Returned Over $5 Billion to Shareholders for 16 Consecutive Quarters. Is CVX the Ultimate Oil Stock to Own Right Now?
+Skipped irrelevant news: Soaring energy profits reignite calls for windfall tax
+Skipped irrelevant news: Fragile cease-fire holds in Middle East while U.S. awaits Iranian war response
+Skipped irrelevant news: What Chevron’s CEO Just Said About Global ‘Supply Outages’ Could Derail Trump’s Economic Momentum
+Skipped irrelevant news: My Top 3 Energy Stocks for May 2026
+
+Loading news for CAT...
+Inserted: Why Caterpillar Could Be the AI Stock of the Year
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-valuation-check-ai-051833752.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.investors.com/etfs-and-funds/mutual-funds/best-mutual-funds-google-stock-broadcom-asml-micron-caterpillar/?src=A00220&yptr=yahoo). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/jim-cramer-highlights-caterpillar-one-150710686.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://247wallst.com/investing/2026/05/08/2-home-run-stocks-id-buy-with-1000-today/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+
+Loading news for JPM...
+Skipped irrelevant news: Banking groups and crypto advocates clash over stablecoin rewards in Senate bill
+Skipped irrelevant news: How The Oportun Financial (OPRT) Investment Story Is Shifting With Price Targets And Risk Views
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/jpmorgan-lawsuit-raises-governance-questions-061245062.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/economy/policy/articles/jpmorgans-jamie-dimon-warns-kind-003003287.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.barchart.com/story/news/1819121/jpmorgan-vs-bank-of-america-how-the-2-dividend-paying-bank-stocks-stack-up-in-2026). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+
+Loading news for INTC...
+Skipped irrelevant news: Is CoreWeave Stock a Buy on the Dip as Revenue Continues to Skyrocket?
+Skipped irrelevant news: Chevron Has Returned Over $5 Billion to Shareholders for 16 Consecutive Quarters. Is CVX the Ultimate Oil Stock to Own Right Now?
+Skipped irrelevant news: Semiconductor sector adds $3.8 trillion in market cap as AI demand broadens
+Skipped irrelevant news: Soaring Oil Prices Aren't Great for Bitcoin. Here's Why Investors Shouldn't Panic.
+Skipped irrelevant news: CoreWeave Stock Was Just Slammed. Is This a Buy-the-Dip Moment?
+
+Done.
+
+2026-05-10 09:33:14,449 | INFO | daily_pipeline | Running framework/analyze_sentiment.py...
+2026-05-10 09:34:34,533 | INFO | daily_pipeline | 
+Analyzing NewsID 91
+Inserted sentiment: neutral (0.8767)
+
+Analyzing NewsID 92
+Inserted sentiment: positive (0.8977)
+
+Analyzing NewsID 93
+Inserted sentiment: positive (0.8248)
+
+Analyzing NewsID 94
+Inserted sentiment: positive (0.5211)
+
+Analyzing NewsID 95
+Inserted sentiment: positive (0.7579)
+
+Analyzing NewsID 96
+Inserted sentiment: positive (0.7573)
+
+Analyzing NewsID 97
+Inserted sentiment: positive (0.7988)
+
+Analyzing NewsID 100
+Inserted sentiment: positive (0.9529)
+
+Analyzing NewsID 101
+Inserted sentiment: neutral (0.8559)
+
+Analyzing NewsID 103
+Inserted sentiment: positive (0.8775)
+
+Analyzing NewsID 104
+Inserted sentiment: neutral (0.8606)
+
+Done.
+
+2026-05-10 09:34:34,535 | ERROR | daily_pipeline | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 201/201 [00:00<00:00, 20381.87it/s]
+
+2026-05-10 09:34:34,535 | INFO | daily_pipeline | Running framework/generate_brief_v3.py...
+2026-05-10 09:34:34,843 | INFO | daily_pipeline | Brief v3 generated for ks150014@student.sgh.waw.pl
+Brief v3 generated for kajetansekunda.brok@gmail.com
+Brief v3 generated for kajetansekunda.ks.ks.fb@gmail.com
+Brief v3 generated for izabelawysocka@onet.pl
+Brief v3 generated for kajetansekunda.ks.ks@gmail.com
+Done.
+
+2026-05-10 09:34:34,843 | INFO | daily_pipeline | Running framework/send_briefs_v3.py...
+2026-05-10 09:34:42,002 | INFO | daily_pipeline | Trying to send BriefID 19 to kajetansekunda.ks.ks@gmail.com
+Email sent successfully to kajetansekunda.ks.ks@gmail.com
+Trying to send BriefID 17 to kajetansekunda.ks.ks.fb@gmail.com
+Email sent successfully to kajetansekunda.ks.ks.fb@gmail.com
+Trying to send BriefID 18 to izabelawysocka@onet.pl
+Email sent successfully to izabelawysocka@onet.pl
+Trying to send BriefID 16 to kajetansekunda.brok@gmail.com
+Email sent successfully to kajetansekunda.brok@gmail.com
+Trying to send BriefID 15 to ks150014@student.sgh.waw.pl
+Email sent successfully to ks150014@student.sgh.waw.pl
+Done.
+
+2026-05-10 09:34:42,018 | INFO | daily_pipeline | Daily pipeline completed successfully.

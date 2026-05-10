@@ -1,6 +1,6 @@
 import subprocess
 import sys
-from logger_config import setup_logger
+from framework.logger_config import setup_logger
 
 
 logger = setup_logger("daily_pipeline")
