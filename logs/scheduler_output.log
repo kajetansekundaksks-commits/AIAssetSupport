@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\kajet\OneDrive\Pulpit\AIAssetSupport\framework\run_daily_pipeline.py", line 3, in <module>
+    from framework.logger_config import setup_logger
+ModuleNotFoundError: No module named 'framework'
+Traceback (most recent call last):
+  File "C:\Users\kajet\OneDrive\Pulpit\AIAssetSupport\framework\run_daily_pipeline.py", line 3, in <module>
+    from framework.logger_config import setup_logger
+ModuleNotFoundError: No module named 'framework'
+Traceback (most recent call last):
+  File "C:\Users\kajet\OneDrive\Pulpit\AIAssetSupport\framework\run_daily_pipeline.py", line 3, in <module>
+    from framework.logger_config import setup_logger
+ModuleNotFoundError: No module named 'framework'
