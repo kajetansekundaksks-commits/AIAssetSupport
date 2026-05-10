@@ -273,7 +273,23 @@ for investor_id, investor_rows in investors.items():
     )
     
     brief_text = "\n".join(brief_lines)
-    
+
+    cursor.execute("""
+        SELECT BriefID
+        FROM DailyBriefs
+        WHERE InvestorID = ?
+        AND BriefDate = ?
+    """, investor_id, brief_date)
+
+    existing_brief = cursor.fetchone()
+
+    if existing_brief:
+        print(
+            f"Brief already exists for InvestorID {investor_id} "
+            f"on {brief_date}. Skipping."
+        )
+        continue
+
     cursor.execute("""
         INSERT INTO DailyBriefs
         (
