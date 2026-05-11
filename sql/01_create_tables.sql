@@ -140,3 +140,28 @@ CREATE TABLE dbo.EmailDeliveryLog (
         REFERENCES dbo.DailyBriefs(BriefID)
 );
 GO
+
+CREATE TABLE dbo.MarketData (
+    MarketDataID INT IDENTITY(1,1) PRIMARY KEY,
+    CompanyID INT NOT NULL,
+    TradeDate DATE NOT NULL,
+
+    OpenPrice FLOAT NULL,
+    HighPrice FLOAT NULL,
+    LowPrice FLOAT NULL,
+    ClosePrice FLOAT NULL,
+    Volume BIGINT NULL,
+
+    LastPrice FLOAT NULL,
+    LastPriceTime DATETIME2 NULL,
+
+    CreatedAt DATETIME2 DEFAULT GETDATE(),
+
+    CONSTRAINT FK_MarketData_Companies
+        FOREIGN KEY (CompanyID)
+        REFERENCES dbo.Companies(CompanyID),
+
+    CONSTRAINT UQ_MarketData_Company_Date
+        UNIQUE (CompanyID, TradeDate)
+);
+GO

@@ -35,6 +35,16 @@ SELECT
     c.Ticker,
     c.CompanyName,
     c.Sector,
+
+    m.TradeDate,
+    m.LastPrice,
+    m.LastPriceTime,
+    m.OpenPrice,
+    m.HighPrice,
+    m.LowPrice,
+    m.ClosePrice,
+    m.Volume,
+
     n.NewsID,
     n.Title,
     n.Content,
@@ -43,6 +53,7 @@ SELECT
     n.RelevanceScore,
     n.RelevanceMethod,
     n.TfidfSimilarity,
+
     s.SentimentLabel,
     s.SentimentScore
 FROM Investors i
@@ -56,6 +67,20 @@ LEFT JOIN News n
     ON c.CompanyID = n.CompanyID
 LEFT JOIN SentimentAnalysis s
     ON n.NewsID = s.NewsID
+OUTER APPLY (
+    SELECT TOP 1
+        md.TradeDate,
+        md.LastPrice,
+        md.LastPriceTime,
+        md.OpenPrice,
+        md.HighPrice,
+        md.LowPrice,
+        md.ClosePrice,
+        md.Volume
+    FROM dbo.MarketData md
+    WHERE md.CompanyID = c.CompanyID
+    ORDER BY md.TradeDate DESC
+) m
 WHERE n.NewsID IS NOT NULL
   AND n.RelevanceScore >= 2
 ORDER BY
@@ -117,6 +142,47 @@ def get_portfolio_tone(sentiments):
     return "mixed"
 
 
+def get_sector_tone(sentiments):
+    if not sentiments:
+        return "not analyzed"
+
+    counts = Counter(sentiments)
+
+    positive = counts.get("positive", 0)
+    negative = counts.get("negative", 0)
+    neutral = counts.get("neutral", 0)
+
+    if positive > negative and positive >= neutral:
+        return "mostly positive"
+    if negative > positive and negative >= neutral:
+        return "mostly negative"
+    if neutral >= positive and neutral >= negative:
+        return "mostly neutral"
+
+    return "mixed"
+
+
+def format_datetime(value):
+    if value is None:
+        return "N/A"
+
+    return str(value).split(".")[0]
+
+
+def format_price(value):
+    if value is None:
+        return "N/A"
+
+    return f"{float(value):.2f}"
+
+
+def format_volume(value):
+    if value is None:
+        return "N/A"
+
+    return f"{int(value):,}"
+
+
 def build_takeaway(ticker, sentiment, articles):
     top_titles = " ".join([a["title"].lower() for a in articles[:3]])
 
@@ -136,9 +202,7 @@ def build_takeaway(ticker, sentiment, articles):
             "There is no clear positive or negative media signal at this stage."
         )
     else:
-        base = (
-            f"Coverage around {ticker} has not been fully analyzed yet."
-        )
+        base = f"Coverage around {ticker} has not been fully analyzed yet."
 
     if "ai" in top_titles:
         base += " AI-related developments appear to be one of the key themes."
@@ -152,24 +216,6 @@ def build_takeaway(ticker, sentiment, articles):
         base += " Risk management, safety, or security concerns are also worth watching."
 
     return base
-def get_sector_tone(sentiments):
-    if not sentiments:
-        return "not analyzed"
-
-    counts = Counter(sentiments)
-
-    positive = counts.get("positive", 0)
-    negative = counts.get("negative", 0)
-    neutral = counts.get("neutral", 0)
-
-    if positive > negative and positive >= neutral:
-        return "mostly positive"
-    if negative > positive and negative >= neutral:
-        return "mostly negative"
-    if neutral >= positive and neutral >= negative:
-        return "mostly neutral"
-
-    return "mixed"
 
 
 # -----------------------------------
@@ -195,7 +241,16 @@ for investor_id, investor_rows in investors.items():
             "sentiment_score": row.SentimentScore,
             "relevance_score": row.RelevanceScore or 0,
             "relevance_method": row.RelevanceMethod or "unknown",
-            "tfidf_similarity": row.TfidfSimilarity or 0
+            "tfidf_similarity": row.TfidfSimilarity or 0,
+
+            "trade_date": row.TradeDate,
+            "last_price": row.LastPrice,
+            "last_price_time": row.LastPriceTime,
+            "open_price": row.OpenPrice,
+            "high_price": row.HighPrice,
+            "low_price": row.LowPrice,
+            "close_price": row.ClosePrice,
+            "volume": row.Volume
         })
 
     all_sentiments = [
@@ -221,9 +276,7 @@ for investor_id, investor_rows in investors.items():
         f"Today's brief covers {len(company_news)} portfolio companies "
         f"and {total_articles} relevant articles."
     )
-    brief_lines.append(
-        f"Overall portfolio news tone: {portfolio_tone}."
-    )
+    brief_lines.append(f"Overall portfolio news tone: {portfolio_tone}.")
     brief_lines.append(
         "The notes below focus on the most relevant company-specific updates "
         "detected in the latest news flow."
@@ -261,6 +314,9 @@ for investor_id, investor_rows in investors.items():
 
     brief_lines.append("")
 
+    # -----------------------------------
+    # COMPANY SECTIONS
+    # -----------------------------------
 
     for (ticker, company_name, sector), articles in company_news.items():
 
@@ -285,6 +341,29 @@ for investor_id, investor_rows in investors.items():
 
         brief_lines.append(f"{ticker} - {company_name}")
         brief_lines.append("-" * 60)
+
+        # -----------------------------------
+        # MARKET SNAPSHOT
+        # -----------------------------------
+
+        market = articles[0]
+
+        if market["last_price"] is not None:
+            brief_lines.append("Market snapshot:")
+            brief_lines.append(
+                f"Latest price: {format_price(market['last_price'])} "
+                f"(as of {format_datetime(market['last_price_time'])})"
+            )
+            brief_lines.append(
+                f"Last session ({market['trade_date']}): "
+                f"Open {format_price(market['open_price'])}, "
+                f"High {format_price(market['high_price'])}, "
+                f"Low {format_price(market['low_price'])}, "
+                f"Close {format_price(market['close_price'])}, "
+                f"Volume {format_volume(market['volume'])}"
+            )
+            brief_lines.append("")
+
         brief_lines.append(f"Relevant articles: {len(articles)}")
         brief_lines.append(f"Media tone: {dominant_sentiment}")
 
@@ -322,14 +401,18 @@ for investor_id, investor_rows in investors.items():
         "Disclaimer: This brief is for informational purposes only "
         "and does not constitute investment advice."
     )
-    
+
     brief_text = "\n".join(brief_lines)
+
+    # -----------------------------------
+    # DUPLICATE PROTECTION
+    # -----------------------------------
 
     cursor.execute("""
         SELECT BriefID
         FROM DailyBriefs
         WHERE InvestorID = ?
-        AND BriefDate = ?
+          AND BriefDate = ?
     """, investor_id, brief_date)
 
     existing_brief = cursor.fetchone()

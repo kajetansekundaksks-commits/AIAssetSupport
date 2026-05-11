@@ -707,3 +707,292 @@ Email sent successfully to ks150014@student.sgh.waw.pl
 Done.
 
 2026-05-10 12:54:33,710 | INFO | daily_pipeline | Daily pipeline completed successfully.
+2026-05-11 19:58:10,422 | INFO | daily_pipeline | Running framework/load_news.py...
+2026-05-11 19:58:28,291 | INFO | daily_pipeline | 
+Loading news for AAPL...
+Skipped irrelevant news: Memory chip stocks hit record highs, pharma reacts to hantavirus concerns
+Skipped irrelevant news: The $1 trillion club's new members are powering the AI boom: Chart of the Day
+Skipped irrelevant news: Musk, Cook Set to Join Trump for Xi Summit, White House Says
+Inserted: Apple delivers surprise win in Big Tech’s AI spending war
+Inserted: Apple-Intel preliminary chip deal seen as positive for Intel but raises fab questions, says Wedbush
+
+Loading news for AMD...
+Skipped irrelevant news: Stock Market Today: Dow Firm, Moderna Eyes Entry Amid Virus Pop; Intel Gain Reaches 260% (Live Coverage)
+Inserted: AMD Rises on Server CPU Supercycle Call
+Skipped irrelevant news: AI Chipmaker Cerebras Could Raise Up To $5.52 Billion in Upsized IPO
+Skipped irrelevant news: Nvidia Stock Heads for Record. What Can Give It Another Boost.
+Skipped irrelevant news: Qualcomm Stock Is Rising. The Chip Stock Is Nearing a Record High.
+
+Loading news for CAT...
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.fool.com/investing/2026/05/09/why-caterpillar-could-be-the-ai-stock-of-the-year/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-valuation-check-ai-051833752.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.investors.com/etfs-and-funds/mutual-funds/best-mutual-funds-google-stock-broadcom-asml-micron-caterpillar/?src=A00220&yptr=yahoo). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/jim-cramer-highlights-caterpillar-one-150710686.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://247wallst.com/investing/2026/05/08/2-home-run-stocks-id-buy-with-1000-today/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+
+Loading news for CVX...
+Skipped irrelevant news: MTDR Q1 Earnings Beat Estimates on Higher Production Volumes
+Skipped irrelevant news: Shell Post Q1 Earnings: Is the Stock Worth Betting on Now?
+Skipped irrelevant news: BP Just Got a Wall Street Double Upgrade: Argus, RBC Both Turn Bullish on Recovery Story
+Skipped irrelevant news: Peace Will Bring Lower Oil: Warren Buffett’s Top Energy Picks for Berkshire Hathaway Will Still Shine
+Skipped irrelevant news: Soaring energy profits reignite calls for windfall tax across Europe
+
+Loading news for GOOGL...
+Skipped irrelevant news: By the numbers: Corporate profits haven't been this smoking hot in years
+Skipped irrelevant news: The $1 trillion club's new members are powering the AI boom: Chart of the Day
+Skipped irrelevant news: Lountzis Asset Management Liquidates SkyWater Technology Stake, According to Recent SEC Filing
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.thestreet.com/investing/apple-delivers-surprise-win-in-big-techs-ai-spending-war). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: Asset Manager Sells 1.2 Million Bond ETF Shares, According to Latest SEC Filing
+
+Loading news for INTC...
+Inserted: Memory chip stocks hit record highs, pharma reacts to hantavirus concerns
+Skipped irrelevant news: Better Oil Stock: Occidental Petroleum vs. Energy Transfer
+Skipped irrelevant news: Before You Invest in SpaceX, Consider This Top Competitor
+Skipped irrelevant news: Stock Market Today: Dow Firm, Moderna Eyes Entry Amid Virus Pop; Intel Gain Reaches 260% (Live Coverage)
+Skipped irrelevant news: Stock Market Today, May 11: Chipmakers Drive Midday Gains Despite Oil Concerns
+
+Loading news for JPM...
+Inserted: JPMorgan Hikes IREN Price Target to $46 but Stays Underweight on Circular NVIDIA Deal Concerns
+Skipped irrelevant news: Goldman Soars 58.4% in a Year: How to Play the Stock Now?
+Skipped irrelevant news: Amazon Prepares to Sell First Swiss Franc Bond in AI Push
+Inserted: JPMorgan issues stark warning on gas prices and inflation
+Skipped irrelevant news: Retail Is Flooding Into the Chipmaker Rally as Moves Get Extreme
+
+Loading news for MSFT...
+Skipped irrelevant news: The $1 trillion club's new members are powering the AI boom: Chart of the Day
+Skipped irrelevant news: Sector Update: Tech Stocks Gain Monday Afternoon
+Skipped irrelevant news: Satya Nadella testifies in Musk v. OpenAI trial
+Skipped irrelevant news: If Trump’s Bull Market Does Cool Off, These Stocks Could Reverse Fast — and These Others Might Keep Powering Higher
+Skipped irrelevant news: Nuclear Reactor Leader Constellation Backs Three Mile Island Goal
+
+Loading news for NVDA...
+Skipped irrelevant news: Memory chip stocks hit record highs, pharma reacts to hantavirus concerns
+Skipped irrelevant news: Musk, Cook Set to Join Trump for Xi Summit, White House Says
+Skipped irrelevant news: Better Oil Stock: Occidental Petroleum vs. Energy Transfer
+Skipped irrelevant news: Before You Invest in SpaceX, Consider This Top Competitor
+Skipped irrelevant news: Stock Market Today: Dow Firm, Moderna Eyes Entry Amid Virus Pop; Intel Gain Reaches 260% (Live Coverage)
+
+Loading news for TSLA...
+Skipped irrelevant news: Tech stocks today: Chipmaker Cerebras to stage blockbuster IPO, AI in focus for Trump-Xi meeting
+Skipped irrelevant news: Musk, Cook Set to Join Trump for Xi Summit, White House Says
+Inserted: Tesla Robotaxi Rollout And Korea EV Growth Test Market Optimism
+Skipped irrelevant news: These Stocks Are Today’s Movers: Lumentum, Intel, Micron, Qualcomm, Tesla, Moderna, Circle Internet, and More
+Skipped irrelevant news: ‘Too early’ to talk IPO, Redwood Materials’ incoming CFO says
+
+Loading news for XOM...
+Skipped irrelevant news: Shell Post Q1 Earnings: Is the Stock Worth Betting on Now?
+Skipped irrelevant news: BP Just Got a Wall Street Double Upgrade: Argus, RBC Both Turn Bullish on Recovery Story
+Skipped irrelevant news: Will There Be a Recession in 2026?
+Skipped irrelevant news: The Zacks Analyst Blog  Micron, Exxon and RWE AG
+Inserted: Oil giants burnt by Chavez eye Venezuela’s new black gold rush
+
+Done.
+
+2026-05-11 19:58:28,291 | INFO | daily_pipeline | Running framework/load_market_data.py...
+2026-05-11 19:58:31,217 | INFO | daily_pipeline | Loading market data for AAPL...
+Updated market data for AAPL
+Loading market data for AMD...
+Updated market data for AMD
+Loading market data for CAT...
+Updated market data for CAT
+Loading market data for CVX...
+Updated market data for CVX
+Loading market data for GOOGL...
+Updated market data for GOOGL
+Loading market data for INTC...
+Updated market data for INTC
+Loading market data for JPM...
+Updated market data for JPM
+Loading market data for MSFT...
+Updated market data for MSFT
+Loading market data for NVDA...
+Updated market data for NVDA
+Loading market data for TSLA...
+Updated market data for TSLA
+Loading market data for XOM...
+Updated market data for XOM
+Market data loading completed.
+
+2026-05-11 19:58:31,217 | INFO | daily_pipeline | Running framework/analyze_sentiment.py...
+2026-05-11 19:58:54,419 | INFO | daily_pipeline | 
+Analyzing NewsID 162
+Inserted sentiment: neutral (0.5875)
+
+Analyzing NewsID 163
+Inserted sentiment: positive (0.9394)
+
+Analyzing NewsID 164
+Inserted sentiment: positive (0.9500)
+
+Analyzing NewsID 171
+Inserted sentiment: positive (0.8223)
+
+Analyzing NewsID 172
+Inserted sentiment: positive (0.6802)
+
+Analyzing NewsID 173
+Inserted sentiment: negative (0.9253)
+
+Analyzing NewsID 174
+Inserted sentiment: positive (0.9108)
+
+Analyzing NewsID 175
+Inserted sentiment: negative (0.7793)
+
+Done.
+
+2026-05-11 19:58:54,419 | ERROR | daily_pipeline | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 201/201 [00:00<00:00, 15128.31it/s]
+
+2026-05-11 19:58:54,419 | INFO | daily_pipeline | Running framework/generate_brief_v3.py...
+2026-05-11 19:58:54,826 | INFO | daily_pipeline | Brief already exists for InvestorID 1 on 2026-05-11. Skipping.
+Brief already exists for InvestorID 6 on 2026-05-11. Skipping.
+Brief already exists for InvestorID 7 on 2026-05-11. Skipping.
+Brief already exists for InvestorID 8 on 2026-05-11. Skipping.
+Brief already exists for InvestorID 9 on 2026-05-11. Skipping.
+Done.
+
+2026-05-11 19:58:54,828 | INFO | daily_pipeline | Running framework/send_briefs_v3.py...
+2026-05-11 19:58:55,291 | INFO | daily_pipeline | No unsent briefs found.
+Done.
+
+2026-05-11 19:58:55,291 | INFO | daily_pipeline | Daily pipeline completed successfully.
+2026-05-11 20:02:53,279 | INFO | daily_pipeline | Running framework/load_news.py...
+2026-05-11 20:02:58,949 | INFO | daily_pipeline | 
+Loading news for AAPL...
+Skipped irrelevant news: Memory chip stocks hit record highs, pharma reacts to hantavirus concerns
+Skipped irrelevant news: The $1 trillion club's new members are powering the AI boom: Chart of the Day
+Skipped irrelevant news: Musk, Cook Set to Join Trump for Xi Summit, White House Says
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.thestreet.com/investing/apple-delivers-surprise-win-in-big-techs-ai-spending-war). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.proactiveinvestors.com/companies/news/1092066/apple-intel-preliminary-chip-deal-seen-as-positive-for-intel-but-raises-fab-questions-says-wedbush-1092066.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+
+Loading news for AMD...
+Skipped irrelevant news: Stock Market Today: Dow Firm, Moderna Eyes Entry Amid Virus Pop; Intel Gain Reaches 260% (Live Coverage)
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/sectors/technology/articles/amd-rises-server-cpu-supercycle-170014885.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: AI Chipmaker Cerebras Could Raise Up To $5.52 Billion in Upsized IPO
+Skipped irrelevant news: Nvidia Stock Heads for Record. What Can Give It Another Boost.
+Skipped irrelevant news: Qualcomm Stock Is Rising. The Chip Stock Is Nearing a Record High.
+
+Loading news for CAT...
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.fool.com/investing/2026/05/09/why-caterpillar-could-be-the-ai-stock-of-the-year/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-valuation-check-ai-051833752.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.investors.com/etfs-and-funds/mutual-funds/best-mutual-funds-google-stock-broadcom-asml-micron-caterpillar/?src=A00220&yptr=yahoo). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/jim-cramer-highlights-caterpillar-one-150710686.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://247wallst.com/investing/2026/05/08/2-home-run-stocks-id-buy-with-1000-today/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+
+Loading news for CVX...
+Skipped irrelevant news: MTDR Q1 Earnings Beat Estimates on Higher Production Volumes
+Skipped irrelevant news: Shell Post Q1 Earnings: Is the Stock Worth Betting on Now?
+Skipped irrelevant news: BP Just Got a Wall Street Double Upgrade: Argus, RBC Both Turn Bullish on Recovery Story
+Skipped irrelevant news: Peace Will Bring Lower Oil: Warren Buffett’s Top Energy Picks for Berkshire Hathaway Will Still Shine
+Skipped irrelevant news: Soaring energy profits reignite calls for windfall tax across Europe
+
+Loading news for GOOGL...
+Skipped irrelevant news: By the numbers: Corporate profits haven't been this smoking hot in years
+Skipped irrelevant news: The $1 trillion club's new members are powering the AI boom: Chart of the Day
+Skipped irrelevant news: Lountzis Asset Management Liquidates SkyWater Technology Stake, According to Recent SEC Filing
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.thestreet.com/investing/apple-delivers-surprise-win-in-big-techs-ai-spending-war). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: Asset Manager Sells 1.2 Million Bond ETF Shares, According to Latest SEC Filing
+
+Loading news for INTC...
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/video/memory-chip-stocks-hit-record-highs-pharma-reacts-to-hantavirus-concerns-145455399.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: Better Oil Stock: Occidental Petroleum vs. Energy Transfer
+Skipped irrelevant news: Before You Invest in SpaceX, Consider This Top Competitor
+Skipped irrelevant news: Stock Market Today: Dow Firm, Moderna Eyes Entry Amid Virus Pop; Intel Gain Reaches 260% (Live Coverage)
+Skipped irrelevant news: Stock Market Today, May 11: Chipmakers Drive Midday Gains Despite Oil Concerns
+
+Loading news for JPM...
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://247wallst.com/investing/2026/05/11/jpmorgan-hikes-iren-price-target-to-46-but-stays-underweight-on-circular-nvidia-deal-concerns/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: Goldman Soars 58.4% in a Year: How to Play the Stock Now?
+Skipped irrelevant news: Amazon Prepares to Sell First Swiss Franc Bond in AI Push
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.thestreet.com/investing/jpmorgan-issues-stark-warning-on-gas-prices-and-inflation). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: Retail Is Flooding Into the Chipmaker Rally as Moves Get Extreme
+
+Loading news for MSFT...
+Skipped irrelevant news: The $1 trillion club's new members are powering the AI boom: Chart of the Day
+Skipped irrelevant news: Sector Update: Tech Stocks Gain Monday Afternoon
+Skipped irrelevant news: Satya Nadella testifies in Musk v. OpenAI trial
+Skipped irrelevant news: If Trump’s Bull Market Does Cool Off, These Stocks Could Reverse Fast — and These Others Might Keep Powering Higher
+Skipped irrelevant news: Nuclear Reactor Leader Constellation Backs Three Mile Island Goal
+
+Loading news for NVDA...
+Skipped irrelevant news: Memory chip stocks hit record highs, pharma reacts to hantavirus concerns
+Skipped irrelevant news: Musk, Cook Set to Join Trump for Xi Summit, White House Says
+Skipped irrelevant news: Better Oil Stock: Occidental Petroleum vs. Energy Transfer
+Skipped irrelevant news: Before You Invest in SpaceX, Consider This Top Competitor
+Skipped irrelevant news: Stock Market Today: Dow Firm, Moderna Eyes Entry Amid Virus Pop; Intel Gain Reaches 260% (Live Coverage)
+
+Loading news for TSLA...
+Skipped irrelevant news: Tech stocks today: Chipmaker Cerebras to stage blockbuster IPO, AI in focus for Trump-Xi meeting
+Skipped irrelevant news: Musk, Cook Set to Join Trump for Xi Summit, White House Says
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://finance.yahoo.com/markets/stocks/articles/tesla-robotaxi-rollout-korea-ev-171925455.html). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+Skipped irrelevant news: These Stocks Are Today’s Movers: Lumentum, Intel, Micron, Qualcomm, Tesla, Moderna, Circle Internet, and More
+Skipped irrelevant news: ‘Too early’ to talk IPO, Redwood Materials’ incoming CFO says
+
+Loading news for XOM...
+Skipped irrelevant news: Shell Post Q1 Earnings: Is the Stock Worth Betting on Now?
+Skipped irrelevant news: BP Just Got a Wall Street Double Upgrade: Argus, RBC Both Turn Bullish on Recovery Story
+Skipped irrelevant news: Will There Be a Recession in 2026?
+Skipped irrelevant news: The Zacks Analyst Blog  Micron, Exxon and RWE AG
+Skipped duplicate or error: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violation of UNIQUE KEY constraint 'UQ_News_Url'. Cannot insert duplicate key in object 'dbo.News'. The duplicate key value is (https://www.telegraph.co.uk/business/2026/05/11/oil-giants-eye-venezuela-gold-rush/). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]The statement has been terminated. (3621)")
+
+Done.
+
+2026-05-11 20:02:58,949 | INFO | daily_pipeline | Running framework/load_market_data.py...
+2026-05-11 20:03:02,462 | INFO | daily_pipeline | Loading market data for AAPL...
+Updated market data for AAPL
+Loading market data for AMD...
+Updated market data for AMD
+Loading market data for CAT...
+Updated market data for CAT
+Loading market data for CVX...
+Updated market data for CVX
+Loading market data for GOOGL...
+Updated market data for GOOGL
+Loading market data for INTC...
+Updated market data for INTC
+Loading market data for JPM...
+Updated market data for JPM
+Loading market data for MSFT...
+Updated market data for MSFT
+Loading market data for NVDA...
+Updated market data for NVDA
+Loading market data for TSLA...
+Updated market data for TSLA
+Loading market data for XOM...
+Updated market data for XOM
+Market data loading completed.
+
+2026-05-11 20:03:02,463 | INFO | daily_pipeline | Running framework/analyze_sentiment.py...
+2026-05-11 20:03:11,591 | INFO | daily_pipeline | 
+Done.
+
+2026-05-11 20:03:11,591 | ERROR | daily_pipeline | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 201/201 [00:00<?, ?it/s]
+
+2026-05-11 20:03:11,593 | INFO | daily_pipeline | Running framework/generate_brief_v3.py...
+2026-05-11 20:03:11,785 | INFO | daily_pipeline | Brief v3 generated for ks150014@student.sgh.waw.pl
+Brief v3 generated for kajetansekunda.brok@gmail.com
+Brief v3 generated for kajetansekunda.ks.ks.fb@gmail.com
+Brief v3 generated for izabelawysocka@onet.pl
+Brief v3 generated for kajetansekunda.ks.ks@gmail.com
+Done.
+
+2026-05-11 20:03:11,785 | INFO | daily_pipeline | Running framework/send_briefs_v3.py...
+2026-05-11 20:03:18,700 | INFO | daily_pipeline | Trying to send BriefID 44 to kajetansekunda.ks.ks@gmail.com
+Email sent successfully to kajetansekunda.ks.ks@gmail.com
+Trying to send BriefID 43 to izabelawysocka@onet.pl
+Email sent successfully to izabelawysocka@onet.pl
+Trying to send BriefID 41 to kajetansekunda.brok@gmail.com
+Email sent successfully to kajetansekunda.brok@gmail.com
+Trying to send BriefID 42 to kajetansekunda.ks.ks.fb@gmail.com
+Email sent successfully to kajetansekunda.ks.ks.fb@gmail.com
+Trying to send BriefID 40 to ks150014@student.sgh.waw.pl
+Email sent successfully to ks150014@student.sgh.waw.pl
+Done.
+
+2026-05-11 20:03:18,700 | INFO | daily_pipeline | Daily pipeline completed successfully.

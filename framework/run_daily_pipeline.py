@@ -7,6 +7,7 @@ logger = setup_logger("daily_pipeline")
 
 scripts = [
     "framework/load_news.py",
+    "framework/load_market_data.py",
     "framework/analyze_sentiment.py",
     "framework/generate_brief_v3.py",
     "framework/send_briefs_v3.py"
