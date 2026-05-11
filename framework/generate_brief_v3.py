@@ -34,6 +34,7 @@ SELECT
     p.PortfolioName,
     c.Ticker,
     c.CompanyName,
+    c.Sector,
     n.NewsID,
     n.Title,
     n.Content,
@@ -151,6 +152,24 @@ def build_takeaway(ticker, sentiment, articles):
         base += " Risk management, safety, or security concerns are also worth watching."
 
     return base
+def get_sector_tone(sentiments):
+    if not sentiments:
+        return "not analyzed"
+
+    counts = Counter(sentiments)
+
+    positive = counts.get("positive", 0)
+    negative = counts.get("negative", 0)
+    neutral = counts.get("neutral", 0)
+
+    if positive > negative and positive >= neutral:
+        return "mostly positive"
+    if negative > positive and negative >= neutral:
+        return "mostly negative"
+    if neutral >= positive and neutral >= negative:
+        return "mostly neutral"
+
+    return "mixed"
 
 
 # -----------------------------------
@@ -167,7 +186,7 @@ for investor_id, investor_rows in investors.items():
     company_news = defaultdict(list)
 
     for row in investor_rows:
-        company_news[(row.Ticker, row.CompanyName)].append({
+        company_news[(row.Ticker, row.CompanyName, row.Sector)].append({
             "title": row.Title,
             "summary": row.Content or "",
             "source": row.Source,
@@ -211,7 +230,39 @@ for investor_id, investor_rows in investors.items():
     )
     brief_lines.append("")
 
-    for (ticker, company_name), articles in company_news.items():
+    # -----------------------------------
+    # SECTOR OVERVIEW
+    # -----------------------------------
+
+    sector_data = defaultdict(list)
+
+    for (ticker, company_name, sector), articles in company_news.items():
+        sector_name = sector or "Unknown"
+
+        for article in articles:
+            sector_data[sector_name].append(article)
+
+    brief_lines.append("Sector overview")
+    brief_lines.append("-" * 60)
+
+    for sector_name, articles in sector_data.items():
+        sentiments = [
+            a["sentiment"]
+            for a in articles
+            if a["sentiment"] != "not analyzed"
+        ]
+
+        sector_tone = get_sector_tone(sentiments)
+
+        brief_lines.append(
+            f"{sector_name}: {sector_tone}, "
+            f"{len(articles)} relevant article(s)"
+        )
+
+    brief_lines.append("")
+
+
+    for (ticker, company_name, sector), articles in company_news.items():
 
         articles = sorted(
             articles,
