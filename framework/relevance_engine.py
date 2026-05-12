@@ -29,7 +29,7 @@ def clean_text(text):
     if text is None:
         return ""
 
-    text = text.lower()
+    text = str(text).lower()
     text = re.sub(r"[^a-zA-Z0-9\s]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
 
@@ -50,6 +50,24 @@ def extract_company_keywords(company_name):
             keywords.append(word)
 
     return list(set(keywords))
+
+# -----------------------------------
+# NORMALIZE EXTRA KEYWORDS / ALIASES
+# -----------------------------------
+
+def normalize_extra_keywords(extra_keywords):
+    if not extra_keywords:
+        return []
+
+    normalized = []
+
+    for keyword in extra_keywords:
+        cleaned = clean_text(keyword)
+
+        if cleaned:
+            normalized.append(cleaned)
+
+    return list(set(normalized))
 
 # -----------------------------------
 # TF-IDF SIMILARITY
@@ -90,7 +108,8 @@ def calculate_relevance(
     ticker,
     company_name,
     title,
-    summary
+    summary,
+    extra_keywords=None
 ):
     ticker = ticker or ""
     company_name = company_name or ""
@@ -100,7 +119,10 @@ def calculate_relevance(
     text = f"{title} {summary}"
     cleaned_text = clean_text(text)
 
-    keywords = extract_company_keywords(company_name)
+    base_keywords = extract_company_keywords(company_name)
+    alias_keywords = normalize_extra_keywords(extra_keywords)
+
+    keywords = list(set(base_keywords + alias_keywords))
 
     company_profile = " ".join(
         [ticker, company_name] + keywords
@@ -109,23 +131,37 @@ def calculate_relevance(
     score = 0.0
     matched_keywords = set()
 
-    # -----------------------------------
-    # TICKER BONUS
-    # -----------------------------------
-
     ticker_clean = clean_text(ticker)
+    company_name_clean = clean_text(company_name)
 
-    if ticker_clean and ticker_clean in cleaned_text:
-        score += 2.0
+    # -----------------------------------
+    # TICKER MATCH
+    # -----------------------------------
+    ticker_pattern = r"\b" + re.escape(ticker_clean) + r"\b"
+
+    if ticker_clean and re.search(ticker_pattern, cleaned_text):
+        score += 3.0
         matched_keywords.add(ticker_clean)
 
     # -----------------------------------
-    # COMPANY KEYWORD MATCH
+    # FULL COMPANY NAME MATCH
+    # -----------------------------------
+
+    if company_name_clean and company_name_clean in cleaned_text:
+        score += 3.0
+        matched_keywords.add(company_name_clean)
+
+    # -----------------------------------
+    # KEYWORD / ALIAS MATCH
     # -----------------------------------
 
     for keyword in keywords:
         if keyword in cleaned_text:
-            score += 1.0
+            if keyword in alias_keywords:
+                score += 1.5
+            else:
+                score += 1.0
+
             matched_keywords.add(keyword)
 
     # -----------------------------------
@@ -137,17 +173,25 @@ def calculate_relevance(
         news_text=cleaned_text
     )
 
-    if tfidf_similarity >= 0.25:
-        score += 1.5
+    if tfidf_similarity >= 0.40:
+        score += 2.0
+    elif tfidf_similarity >= 0.25:
+        score += 1.0
 
     # -----------------------------------
     # FINAL DECISION
     # -----------------------------------
 
-    is_relevant = score >= 2.0
+    is_relevant = score >= 2.5
 
     if ticker_clean in matched_keywords:
         method = "ticker_match"
+    elif company_name_clean in matched_keywords:
+        method = "company_name_match"
+    elif any(keyword in matched_keywords for keyword in alias_keywords):
+        method = "alias_keyword_match"
+    elif tfidf_similarity >= 0.40:
+        method = "strong_tfidf_similarity"
     elif tfidf_similarity >= 0.25:
         method = "tfidf_similarity"
     elif matched_keywords:

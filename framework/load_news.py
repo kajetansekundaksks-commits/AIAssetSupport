@@ -20,26 +20,44 @@ cursor = conn.cursor()
 # -----------------------------------
 
 cursor.execute("""
-    SELECT 
-        CompanyID,
-        Ticker,
-        CompanyName,
-        Sector
-    FROM Companies
-    ORDER BY Ticker
+    SELECT
+        c.CompanyID,
+        c.Ticker,
+        c.CompanyName,
+        ck.Keyword
+    FROM Companies c
+    LEFT JOIN CompanyKeywords ck
+        ON c.CompanyID = ck.CompanyID
+    ORDER BY c.Ticker
 """)
+company_rows = cursor.fetchall()
 
-companies = cursor.fetchall()
+companies = {}
+
+for row in company_rows:
+    company_id = row.CompanyID
+
+    if company_id not in companies:
+        companies[company_id] = {
+            "company_id": row.CompanyID,
+            "ticker": row.Ticker,
+            "company_name": row.CompanyName,
+            "keywords": set()
+        }
+
+    if row.Keyword:
+        companies[company_id]["keywords"].add(row.Keyword.lower())
 
 # -----------------------------------
 # LOAD NEWS
 # -----------------------------------
 
-for company in companies:
+for company in companies.values():
 
-    company_id = company.CompanyID
-    ticker = company.Ticker
-    company_name = company.CompanyName
+    company_id = company["company_id"]
+    ticker = company["ticker"]
+    company_name = company["company_name"]
+    extra_keywords = company["keywords"]
 
     print(f"\nLoading news for {ticker}...")
 
@@ -66,7 +84,8 @@ for company in companies:
                 ticker=ticker,
                 company_name=company_name,
                 title=title,
-                summary=summary
+                summary=summary,
+                extra_keywords=extra_keywords
             )
 
             if not relevance["is_relevant"]:
