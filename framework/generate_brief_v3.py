@@ -161,6 +161,27 @@ def get_sector_tone(sentiments):
 
     return "mixed"
 
+def calculate_sector_exposure(company_news):
+
+    sector_counts = Counter()
+
+    total_companies = len(company_news)
+
+    for (_, _, sector) in company_news.keys():
+
+        sector_name = sector or "Unknown"
+
+        sector_counts[sector_name] += 1
+
+    exposures = {}
+
+    for sector_name, count in sector_counts.items():
+
+        percentage = round((count / total_companies) * 100)
+
+        exposures[sector_name] = percentage
+
+    return exposures
 
 def format_datetime(value):
     if value is None:
@@ -182,6 +203,15 @@ def format_volume(value):
 
     return f"{int(value):,}"
 
+def format_daily_move(open_price, close_price):
+    if open_price is None or close_price is None or open_price == 0:
+        return "N/A"
+
+    move = ((float(close_price) - float(open_price)) / float(open_price)) * 100
+
+    sign = "+" if move >= 0 else ""
+
+    return f"{sign}{move:.2f}%"
 
 def build_takeaway(ticker, sentiment, articles):
     top_titles = " ".join([a["title"].lower() for a in articles[:3]])
@@ -263,6 +293,44 @@ for investor_id, investor_rows in investors.items():
     total_articles = sum(len(articles) for articles in company_news.values())
     portfolio_tone = get_portfolio_tone(all_sentiments)
 
+    sector_exposure = calculate_sector_exposure(company_news)
+
+    most_discussed = max(
+        company_news.items(),
+        key=lambda x: len(x[1])
+    )
+
+    most_discussed_ticker = most_discussed[0][0]
+    most_discussed_count = len(most_discussed[1])
+
+    company_positive_scores = {}
+    company_negative_scores = {}
+
+    for (ticker, company_name, sector), articles in company_news.items():
+
+        positive_count = sum(
+            1 for a in articles
+            if a["sentiment"] == "positive"
+        )
+
+        negative_count = sum(
+            1 for a in articles
+            if a["sentiment"] == "negative"
+        )
+
+        company_positive_scores[ticker] = positive_count
+        company_negative_scores[ticker] = negative_count
+
+    strongest_positive = max(
+        company_positive_scores,
+        key=company_positive_scores.get
+    )
+
+    highest_negative = max(
+        company_negative_scores,
+        key=company_negative_scores.get
+    )
+
     brief_lines = []
 
     brief_lines.append(f"Daily Investor Brief - {brief_date}")
@@ -282,6 +350,45 @@ for investor_id, investor_rows in investors.items():
         "detected in the latest news flow."
     )
     brief_lines.append("")
+
+    # -----------------------------------
+    # PORTFOLIO ANALYTICS
+    # -----------------------------------
+
+    brief_lines.append("Portfolio analytics")
+    brief_lines.append("-" * 60)
+
+    brief_lines.append(
+        f"Portfolio company count: {len(company_news)}"
+    )
+
+    brief_lines.append("Sector exposure:")
+
+    for sector_name, exposure in sector_exposure.items():
+
+        brief_lines.append(
+            f"- {sector_name}: {exposure}%"
+        )
+
+    brief_lines.append("")
+
+    brief_lines.append(
+        f"Most discussed holding: "
+        f"{most_discussed_ticker} "
+        f"({most_discussed_count} articles)"
+    )
+
+    brief_lines.append(
+        f"Strongest positive sentiment: "
+        f"{strongest_positive}"
+    )
+
+    brief_lines.append(
+        f"Highest negative sentiment exposure: "
+        f"{highest_negative}"
+    )
+
+    brief_lines.append("")    
 
     # -----------------------------------
     # SECTOR OVERVIEW
@@ -349,20 +456,25 @@ for investor_id, investor_rows in investors.items():
         market = articles[0]
 
         if market["last_price"] is not None:
-            brief_lines.append("Market snapshot:")
-            brief_lines.append(
-                f"Latest price: {format_price(market['last_price'])} "
-                f"(as of {format_datetime(market['last_price_time'])})"
-            )
-            brief_lines.append(
-                f"Last session ({market['trade_date']}): "
-                f"Open {format_price(market['open_price'])}, "
-                f"High {format_price(market['high_price'])}, "
-                f"Low {format_price(market['low_price'])}, "
-                f"Close {format_price(market['close_price'])}, "
-                f"Volume {format_volume(market['volume'])}"
-            )
-            brief_lines.append("")
+            daily_move = format_daily_move(
+            market["open_price"],
+            market["close_price"]
+        )
+
+        brief_lines.append("Market snapshot:")
+        brief_lines.append(
+            f"Latest price: {format_price(market['last_price'])} "
+            f"(as of {format_datetime(market['last_price_time'])} local system time)"
+        )
+        brief_lines.append("")
+        brief_lines.append(f"Last completed session ({market['trade_date']}):")
+        brief_lines.append(f"- Open: {format_price(market['open_price'])}")
+        brief_lines.append(f"- High: {format_price(market['high_price'])}")
+        brief_lines.append(f"- Low: {format_price(market['low_price'])}")
+        brief_lines.append(f"- Close: {format_price(market['close_price'])}")
+        brief_lines.append(f"- Daily move: {daily_move}")
+        brief_lines.append(f"- Volume: {format_volume(market['volume'])}")
+        brief_lines.append("")
 
         brief_lines.append(f"Relevant articles: {len(articles)}")
         brief_lines.append(f"Media tone: {dominant_sentiment}")
