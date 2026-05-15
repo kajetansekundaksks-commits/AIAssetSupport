@@ -89,37 +89,6 @@ Core tables:
 
 ---
 
-# Project Structure
-
-```text
-AIAssetSupport/
-│
-├── framework/
-│   ├── load_news.py
-│   ├── load_market_data.py
-│   ├── analyze_sentiment.py
-│   ├── generate_brief_v3.py
-│   ├── send_briefs_v3.py
-│   ├── relevance_engine.py
-│   ├── import_companies.py
-│   ├── import_company_aliases.py
-│   └── run_daily_pipeline.py
-│
-├── sql/
-│   ├── 01_create_tables.sql
-│   ├── 02_seed_investors.sql
-│   └── 03_seed_portfolios.sql
-│
-├── data/
-│   ├── companies.csv
-│   └── company_aliases.csv
-│
-├── logs/
-│
-└── README.md
-
----
-
 # Example Brief Content
 
 The system generates investor reports containing:
@@ -213,3 +182,36 @@ This project was created as a hands-on learning and portfolio project focused on
 # Disclaimer
 
 This project is for educational and portfolio purposes only and does not constitute investment advice.
+
+
+
+# Project Structure
+
+```text
+AIAssetSupport/
+│
+├── framework/
+│   ├── load_news.py
+│   ├── load_market_data.py
+│   ├── analyze_sentiment.py
+│   ├── generate_brief_v3.py
+│   ├── send_briefs_v3.py
+│   ├── relevance_engine.py
+│   ├── import_companies.py
+│   ├── import_company_aliases.py
+│   └── run_daily_pipeline.py
+│
+├── sql/
+│   ├── 01_create_tables.sql
+│   ├── 02_seed_investors.sql
+│   └── 03_seed_portfolios.sql
+│
+├── data/
+│   ├── companies.csv
+│   └── company_aliases.csv
+│
+├── logs/
+│
+└── README.md
+
+---
